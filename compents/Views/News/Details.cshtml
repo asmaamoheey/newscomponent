@@ -1,0 +1,40 @@
+﻿@model compents.Models.News
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="card" style="width:60%; margin:auto;">
+    <div class="card-header bg-dark text-white">
+        <h5>Employee Details</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-borderless">
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.title)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.title)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.content)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.content)</td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.photo)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.photo)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.sources)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.sources)</td>
+            </tr>
+           
+        </table>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Back to List", "Index", "", new { @class = "btn btn-primary" })
+        </p>
+    </div>
+</div>  

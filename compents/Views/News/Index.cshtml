@@ -1,0 +1,43 @@
+﻿@model IEnumerable<compents.Models.News>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 class="text-center text-uppercase">List of News</h3>
+<p>
+    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.id)</th>
+            <th>@Html.DisplayNameFor(m => m.title)</th>
+            <th>@Html.DisplayNameFor(m => m.content)</th>
+            <th>@Html.DisplayNameFor(m => m.photo)</th>
+            <th>@Html.DisplayNameFor(m => m.publichdate)</th>
+            <th>@Html.DisplayNameFor(m => m.sources)</th>
+            <th>@Html.DisplayNameFor(m => m.categories)</th>
+            <th>Action(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var comp in Model)
+        {
+        <tr>
+            <td>@comp.id</td>
+            <td>@comp.title</td>
+            <td>@comp.content</td>
+            <td>@comp.photo</td>
+            <td>@comp.publichdate</td>
+            <td>@comp.sources</td>
+            <td>@comp.categories</td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = comp.id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Edit", "Edit", new { id = comp.id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Delete", "Delete", new { id = comp.id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>  
